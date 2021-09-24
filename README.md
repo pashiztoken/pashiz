@@ -33,3 +33,4 @@ blender 2.8 intro: https://www.youtube.com/watch?v=jBqYTgaFDxU
 3d asset by Andrey Lukashov ([@overlaps](https://twitter.com/overlaps))/sketchfab: https://sketchfab.com/3d-models/space-exploration-wlp-series-8-91964c1ce1a34c3985b6257441efa500 GLTF data was compressed to draco via [gltf-pipeline](https://github.com/AnalyticalGraphicsInc/gltf-pipeline).
 # pashiz
 # pashiz
+# website
