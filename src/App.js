@@ -7,7 +7,7 @@ import { OrbitControls, draco } from 'drei'
 import logo from './logoNew.png';
 
 function Model({ url }) {
-  const { nodes, materials } = useLoader(GLTFLoader, url, draco())
+  const { nodes, materials } = useLoader(GLTFLoader, url, draco());
   return (
     <group rotation={[-Math.PI / 2, 0, 0]} position={[0, -7, 0]} scale={[7, 7, 7]}>
       <group rotation={[Math.PI / 13.5, -Math.PI / 5.8, Math.PI / 5.6]}>
@@ -19,20 +19,20 @@ function Model({ url }) {
 }
 
 function Loading() {
-  const [finished, set] = useState(false)
-  const [width, setWidth] = useState(0)
+  const [finished, set] = useState(false);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    THREE.DefaultLoadingManager.onLoad = () => set(true)
+    THREE.DefaultLoadingManager.onLoad = () => set(true);
     THREE.DefaultLoadingManager.onProgress = (url, itemsLoaded, itemsTotal) =>
       setWidth((itemsLoaded / itemsTotal) * 200)
-  }, [])
+  }, []);
 
   const props = useTransition(finished, null, {
     from: { opacity: 1, width: 0 },
     leave: { opacity: 0 },
     update: { width },
-  })
+  });
 
   return props.map(
     ({ item: finished, key, props: { opacity, width } }) =>
@@ -56,6 +56,14 @@ export default function App() {
         Baby Doge Coin
       </h1>
         <img src={logo} alt="Logo" />
+        <nav>
+        <ul className="list-wrap">
+            <li><a href="#">Wallet</a></li>
+            <li><a href="#">Exchange</a></li>
+            <li><a href="#">NFT</a></li>
+            <li><a href="#">Arcade</a></li>
+        </ul>
+        </nav>
       <Canvas shadowMap camera={{ position: [0, 0, 15] }}>
         <ambientLight intensity={0.75} />
         <pointLight intensity={1} position={[-10, -25, -10]} />
